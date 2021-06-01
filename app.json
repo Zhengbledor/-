@@ -7,8 +7,7 @@
     "pages/sc/sc",
     "pages/wd/wd",
     "pages/logs/logs",
-    "pages/test/test",
-    "pages/edi/edi"
+    "pages/test/test"
   ],
   "window":{
     "backgroundTextStyle":"light",

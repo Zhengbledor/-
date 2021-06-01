@@ -6,6 +6,12 @@
     {{title}}
 ------------
     {{test}}
+        <van-image wx:for="{{imaURL}}" wx:for-index="index" wx:for-item="item"
+            width="10rem"
+            height="10rem"
+            fit="contain"
+            src="{{item.url}}"
+        />
 </view>
 <view wx:else> 
     <wux-toast id="wux-toast"/>
@@ -13,7 +19,7 @@
 
     <wux-textarea showConfirmBar bind:change="testChange" hasCount maxlength="500" rows="10" cursorSpacing="80" defaultValue="{{test}}" />
     <!-- 上传文件的vant Webapp组件 -->
-    <van-uploader file-list="{{ fileList2 }}" max-count="3" bind:after-read="afterRead"   bind:delete="deleteImg" deletable="{{ true }}"/>
+    <van-uploader file-list="{{ tempImaURL }}" max-count="3" bind:after-read="afterRead"   bind:delete="deleteImg" deletable="{{ true }}"/>
 
     <!-- 提示功能显示 -->
     <view>
