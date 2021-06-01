@@ -1,0 +1,24 @@
+<!--pages/show/show.wxml-->
+<wux-button  size = "media" bind:click="ediClick"><wux-icon type="ios-create" size="16"/> {{edi}} </wux-button>
+
+<wux-button  size = "media" bind:click="delClick"><wux-icon type="ios-close" size="16"/> 删除 </wux-button>
+<view wx:if="{{ifEdi==false}}">
+    {{title}}
+------------
+    {{test}}
+</view>
+<view wx:else> 
+    <wux-toast id="wux-toast"/>
+    <wux-textarea showConfirmBar bind:change="titleChange" hasCount maxlength="20"  cursorSpacing="80" defaultValue="{{title}}" />
+
+    <wux-textarea showConfirmBar bind:change="testChange" hasCount maxlength="500" rows="10" cursorSpacing="80" defaultValue="{{test}}" />
+    <!-- 上传文件的vant Webapp组件 -->
+    <van-uploader file-list="{{ fileList2 }}" max-count="3" bind:after-read="afterRead"   bind:delete="deleteImg" deletable="{{ true }}"/>
+
+    <!-- 提示功能显示 -->
+    <view>
+        <wux-button  size = "media" bind:click="saveClick"><wux-icon type="ios-save" size="16"/> 保存 </wux-button>
+    </view> 
+
+</view>
+<wux-toast id="wux-toast"/>

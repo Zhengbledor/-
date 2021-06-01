@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "wux-button": "../../miniprogram_npm/wux-weapp/button",
+    "wux-toast":"../../miniprogram_npm/wux-weapp/toast",
+    "wux-cell-group": "../../miniprogram_npm/wux-weapp/cell-group",
+    "wux-textarea": "../../miniprogram_npm/wux-weapp/textarea",
+    "wux-icon": "../../miniprogram_npm/wux-weapp/icon",
+    "wux-upload": "../../miniprogram_npm/wux-weapp/upload",
+    "van-uploader": "@vant/weapp/uploader/index",
+    "van-toast": "@vant/weapp/toast/index"
+  }
+}

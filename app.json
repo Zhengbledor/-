@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/sz/sz",
+    "pages/add/add",
+    "pages/show/show",
+    "pages/fx/fx",
+    "pages/sc/sc",
+    "pages/wd/wd",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/edi/edi"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/sz/sz",
+      "text": "手帐",
+      "iconPath": "icon/icon_ibpr4ivw98r/liebiao.png",
+      "selectedIconPath": "icon/icon_ibpr4ivw98r/liebiao.png"
+    },{
+      "pagePath": "pages/fx/fx",
+      "text": "发现",
+      "iconPath": "icon/icon_ibpr4ivw98r/quanbu.png",
+      "selectedIconPath": "icon/icon_ibpr4ivw98r/quanbu.png"
+    },{
+      "pagePath": "pages/sc/sc",
+      "text": "商城",
+      "iconPath": "icon/icon_ibpr4ivw98r/shangcheng.png",
+      "selectedIconPath": "icon/icon_ibpr4ivw98r/shangcheng.png"
+    },{
+      "pagePath": "pages/wd/wd",
+      "text": "我的",
+      "iconPath": "icon/icon_ibpr4ivw98r/wode.png",
+      "selectedIconPath": "icon/icon_ibpr4ivw98r/wode.png"
+    }
+  ]
+  }
+}
