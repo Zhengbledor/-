@@ -1,3 +1,11 @@
 <!--pages/fx/fx.wxml-->
-
-<text>pages/fx/fx.wxml</text>
+<van-image
+            width="10rem"
+            height="10rem"
+            fit="contain"
+            src="{{manhuaURL[index]}}"
+        />
+<wux-pagination defaultCurrent="1" total="4" mode="button" bind:prev="prev" bind:next="next">
+            <view slot="prev">Prev</view>
+            <view slot="next">Next</view>
+</wux-pagination>
