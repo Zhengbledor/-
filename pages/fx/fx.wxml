@@ -1,7 +1,7 @@
 <!--pages/fx/fx.wxml-->
 <van-image
-            width="10rem"
-            height="10rem"
+            width="270"
+            height="600"
             fit="contain"
             src="{{manhuaURL[index]}}"
         />

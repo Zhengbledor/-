@@ -1,2 +1,362 @@
 <!--pages/sc/sc.wxml-->
-<text>pages/sc/sc.wxml</text>
+<van-sticky>
+    <view class="search-contianer">
+  <view class="search" style="height:{{navHeight}}px;padding-top:{{navTop}}px">
+    <view class="search-title" 
+      style="height:{{navHeight-navTop-5}}px;line-height:{{navHeight-navTop-5}}px;width:{{132/52*(navHeight-navTop-5)}}px;">
+      猫的手帐
+    </view>
+    <input placeholder-class="search-placeholder"
+      style="width:{{menuButtonObject.left-18-((132/52)*(navHeight-navTop-5))}}px" type="text" placeholder="输入关键词搜索" disabled
+      value="{{name}}" bindinput="bindinput" bindtap="goSearch"></input>
+  </view>
+  </view>
+</van-sticky>
+<view style="height:{{navHeight-navTop+20}}px">
+</view>
+
+        <!-- 肉冻 -->
+        <van-image
+              width="750rpx"
+              fit="widthFix"
+              src="{{fenleiURL[0]}}"
+        />
+        <scroll-view scroll-x="true">
+        <view class="banner" scroll-x="true">
+        <view class="banner_Item" bindtap="detail" data-fenlei="roudong" data-which="0" >
+          <view class="banner_Item_image">
+              <van-image
+                width="180rpx"
+                fit="widthFix"
+                src="{{dongshiURL[3]}}"
+                />
+          </view>
+          <view class="banner_Item_name">
+            K9Natural冻干牛肉鳕鱼320g
+          </view>
+          <view class="banner_Item_price">
+            ¥318
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="roudong" data-which="1" >
+          <view class="banner_Item_image">
+              <van-image
+                width="180rpx"
+                fit="widthFix"
+                src="{{dongshiURL[2]}}"
+                />
+          </view>
+          <view class="banner_Item_name">
+            SC冻干猫粮鸭朋鹅友(鸭肉...
+          </view>
+          <view class="banner_Item_price">
+            ¥358
+          </view>
+        </view>
+        
+        <view class="banner_Item" bindtap="detail" data-fenlei="roudong" data-which="2" >
+          <view class="banner_Item_image">
+              <van-image
+                width="180rpx"
+                fit="widthFix"
+                src="{{dongshiURL[3]}}"
+                />
+          </view>
+          <view class="banner_Item_name">
+            K9Natural鸡肉羊肉320g
+          </view>
+          <view class="banner_Item_price">
+            ¥318
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="roudong" data-which="3" >
+          <view class="banner_Item_image">
+              <van-image
+                width="180rpx"
+                fit="widthFix"
+                src="{{dongshiURL[1]}}"
+                />
+          </view>
+          <view class="banner_Item_name">
+            美国VE肉饼兔子冻干全猫粮...
+          </view>
+          <view class="banner_Item_price">
+            ¥286
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="roudong" data-which="3" >
+          <view class="banner_Item_image">
+              <van-image
+                width="180rpx"
+                fit="widthFix"
+                src="{{dongshiURL[0]}}"
+                />
+          </view>
+          <view class="banner_Item_name">
+            SC冻干猫粮开胃火鸡(火鸡...
+          </view>
+          <view class="banner_Item_price">
+            ¥358
+          </view>
+        </view>
+
+        </view>
+        </scroll-view>
+
+        <!-- 猫罐 -->
+        <van-image
+            width="750rpx"
+            fit="widthFix"
+            src="{{fenleiURL[1]}}"
+        />
+        <scroll-view scroll-x="true">
+          <view class="banner" scroll-x="true">
+
+          <view class="banner_Item" bindtap="detail" data-fenlei="zhushi" data-which="0" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{zhushiURL[0]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            Ziwi巅峰走地鸡猫罐头185g
+          </view>
+          <view class="banner_Item_price">
+            ¥35
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="zhushi" data-which="1" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{zhushiURL[1]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            Catz经典猫罐头N3家禽200g
+          </view>
+          <view class="banner_Item_price">
+            ¥20
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="zhushi" data-which="2" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{zhushiURL[2]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            K9Natural鸡肉猫罐头85g
+          </view>
+          <view class="banner_Item_price">
+            ¥22
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="zhushi" data-which="3" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{zhushiURL[3]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            德国Leonardo小李子牛肉猫...
+          </view>
+          <view class="banner_Item_price">
+            ¥24
+          </view>
+        </view>
+
+          </view>
+        </scroll-view>
+
+        <!-- 猫砂 -->
+        <van-image
+            width="750rpx"
+            fit="widthFix"
+            src="{{fenleiURL[2]}}"
+        />
+        <scroll-view scroll-x="true">
+          <view class="banner" scroll-x="true">
+
+          <view class="banner_Item" bindtap="detail" data-fenlei="maosha" data-which="0" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maoshaURL[0]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            N1豆腐猫砂活性炭17.5l*3
+          </view>
+          <view class="banner_Item_price">
+            ¥255
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="maosha" data-which="1" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maoshaURL[1]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            N1猫砂2.0细砂17.5l*3
+          </view>
+          <view class="banner_Item_price">
+            ¥285
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="maosha" data-which="2" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maoshaURL[2]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            蓝钻EverClean膨湿土...
+          </view>
+          <view class="banner_Item_price">
+            ¥178
+          </view>
+        </view>
+        <view class="banner_Item" bindtap="detail" data-fenlei="maosha" data-which="3" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maoshaURL[3]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            宠确幸天然活性碳猫砂6l*6...
+          </view>
+          <view class="banner_Item_price">
+            ¥270
+          </view>
+        </view>
+
+        </view>
+        </scroll-view>
+
+        <!-- 猫条 -->
+        <van-image
+            width="750rpx"
+            fit="widthFix"
+            src="{{fenleiURL[3]}}"
+        />
+        <scroll-view scroll-x="true">
+          <view class="banner" scroll-x="true">
+
+          <view class="banner_Item" bindtap="detail" data-fenlei="maotiao" data-which="0" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maotiaoURL[0]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            Farmers Market蓝宝石猫条...
+          </view>
+          <view class="banner_Item_price">
+            ¥18
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="maotiao" data-which="1" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maotiaoURL[1]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            Ciao伊纳宝鸡小胸配方猫条
+          </view>
+          <view class="banner_Item_price">
+            ¥10
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="maotiao" data-which="2" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maotiaoURL[2]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            Neco puree无添加鲣鱼猫条...
+          </view>
+          <view class="banner_Item_price">
+            ¥22
+          </view>
+        </view>
+
+        <view class="banner_Item" bindtap="detail" data-fenlei="maotiao" data-which="3" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maotiaoURL[3]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+           Farmers Market蓝宝石猫条...
+          </view>
+          <view class="banner_Item_price">
+            ¥18
+          </view>
+        </view>
+        <view class="banner_Item" bindtap="detail" data-fenlei="maotiao" data-which="4" >
+          <view class="banner_Item_image" >
+              <van-image
+                height="200rpx"
+                fit="heightFix"
+                src="{{maotiaoURL[4]}}"
+                style="margin: auto"
+                />
+          </view>
+          <view class="banner_Item_name">
+            Ciao伊纳宝啾噜棒·金枪鱼...
+          </view>
+          <view class="banner_Item_price">
+            ¥10
+          </view>
+        </view>
+
+            </view>
+            </scroll-view>

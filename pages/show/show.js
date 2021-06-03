@@ -83,9 +83,9 @@ Page({
             })
             return
         }
-        const imaURL=this.data.imaURL
-        for(var i=0;i<imaURL.length;i++){
-            if(imaURL[i].status=="uploading")
+        const tempImaURL=this.data.tempImaURL
+        for(var i=0;i<tempImaURL.length;i++){
+            if(tempImaURL[i].status=="uploading")
             {
                 $wuxToast().show({
                     type:'forbidden',
