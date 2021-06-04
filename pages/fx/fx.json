@@ -1,6 +1,9 @@
 {
   "usingComponents": {
     "wux-pagination": "../../miniprogram_npm/wux-weapp/pagination/index",
-    "van-image": "@vant/weapp/image/index"
-  }
+    "van-image": "@vant/weapp/image/index",
+
+    "wux-textarea": "../../miniprogram_npm/wux-weapp/textarea"
+  },
+  "navigationBarTitleText":"发现"
 }

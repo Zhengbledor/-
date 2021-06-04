@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "wux-toast":"../../miniprogram_npm/wux-weapp/toast"
+  },
+  "navigationBarTitleText":"我的"
 }

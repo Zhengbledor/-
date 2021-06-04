@@ -1,6 +1,6 @@
 /* pages/sc/sc.wxss */
 .search-container {
-    background-color: white;
+    background-color: #4B4B4B;
   }
   
   .search {
@@ -10,13 +10,13 @@
     display: flex;
     box-sizing: border-box;
     padding-left: 26rpx;
-    background-color: white;
+    background-color: #4B4B4B;
   }
   
   .search input {
     display: block;
     box-sizing: border-box;
-    background: #F7F8FA;
+    background: #646464;
     height: 62rpx;
     border-radius: 20rpx;
     padding-left: 20rpx;

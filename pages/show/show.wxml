@@ -1,19 +1,57 @@
 <!--pages/show/show.wxml-->
-<wux-button  size = "media" bind:click="ediClick"><wux-icon type="ios-create" size="16"/> {{edi}} </wux-button>
 
-<wux-button  size = "media" bind:click="delClick"><wux-icon type="ios-close" size="16"/> 删除 </wux-button>
 <view wx:if="{{ifEdi==false}}">
-    {{title}}
-------------
-    {{test}}
+
+<view class="container">
+    <view class="question" bindtap="toQuestion">
+        <text class="question-title">{{title}}</text>
+    </view>
+    <view class="answer-content">
+    <wux-button  size = "media" bind:click="ediClick"><wux-icon type="ios-create" size="16"/> {{edi}} </wux-button>
+<wux-button  size = "media" bind:click="delClick"><wux-icon type="ios-close" size="16"/> 删除 </wux-button>
+        <text>
+            {{test}}
+        </text>
+        <van-image wx:for="{{imaURL}}" wx:for-index="index" wx:for-item="item"
+            width="600rpx"
+            fit="widthFix"
+            src="{{item.url}}"
+        />
+        <text>
+        {{time}}</text> 
+        </view>
+    </view>
+    <view wx:if="{{index<length-1}}" class="add_btn">
+    <wux-button type="stable"  bind:click="next"><wux-icon type="ios-arrow-forward" size="16"/>  </wux-button>
+    
+</view> 
+    <view wx:if="{{index!=0}}" class="add_btn_l">
+    <wux-button type="stable"  bind:click="back"><wux-icon type="ios-arrow-back" size="16"/>  </wux-button>
+    </view> 
+</view>
+
+
+<!-- <view>
+    <text>{{title}}</text>
+</view>
+<view>
+    <text style="font-size:small">{{test}}</text> 
+    </view>
         <van-image wx:for="{{imaURL}}" wx:for-index="index" wx:for-item="item"
             width="10rem"
             height="10rem"
             fit="contain"
             src="{{item.url}}"
         />
-</view>
+</view> -->
+
+
+
+
+
 <view wx:else> 
+    <wux-button  size = "media" bind:click="ediClick"><wux-icon type="ios-create" size="16"/> {{edi}} </wux-button>
+<wux-button  size = "media" bind:click="delClick"><wux-icon type="ios-close" size="16"/> 删除 </wux-button>
     <wux-toast id="wux-toast"/>
     <wux-textarea showConfirmBar bind:change="titleChange" hasCount maxlength="20"  cursorSpacing="80" defaultValue="{{title}}" />
 

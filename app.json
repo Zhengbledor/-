@@ -1,17 +1,19 @@
 {
-  "pages":["pages/sc/sc",
+  "pages":[ 
     "pages/sz/sz",
+    "pages/fx/fx",
+    "pages/goodDetail/goodDetail",
+    "pages/logs/logs",
+    "pages/sc/sc",
     "pages/add/add",
     "pages/show/show",
-    "pages/fx/fx",
     "pages/search/search",
     "pages/wd/wd",
-    "pages/logs/logs",
     "pages/test/test"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#4B4B4B",
     "navigationBarTitleText": "Weixin",
     "navigationBarTextStyle":"black"
   },
@@ -83,5 +85,5 @@
     "van-area": "@vant/weapp/area/index",
     "van-row": "@vant/weapp/row/index",
     "van-col": "@vant/weapp/col/index"
-  }
+}
 }

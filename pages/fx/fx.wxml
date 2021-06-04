@@ -1,11 +1,44 @@
 <!--pages/fx/fx.wxml-->
-<van-image
-            width="270"
-            height="600"
-            fit="contain"
+<wux-pagination defaultCurrent="1" total="4" mode="button" bind:prev="prev" bind:next="next">
+            <view slot="prev">上一张</view>
+            <view slot="next">下一张</view>
+</wux-pagination>
+<van-image  
+            width="720rpx"
+            fit="widthFix"
             src="{{manhuaURL[index]}}"
         />
-<wux-pagination defaultCurrent="1" total="4" mode="button" bind:prev="prev" bind:next="next">
-            <view slot="prev">Prev</view>
-            <view slot="next">Next</view>
-</wux-pagination>
+
+<van-divider
+  contentPosition="center"
+    >
+  评论
+</van-divider>
+<view class="container">
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+    <view class="feed-item">
+            <view class="feed-source">
+                <a class="">
+                    <view class="avatar">
+                        <image src="{{item.feed_source_img}}"></image>
+                    </view>
+                    <text>{{item.feed_source_name}}{{item.feed_source_txt}}</text>
+                </a>
+            </view>
+            <view class="feed-content">
+                <view class="question" qid="{{question_id}}" bindtap="bindQueTap">
+                    <a class="question-link">
+                        <text>{{item.question}}</text>
+                    </a>
+                </view>
+                <view class="answer-body">
+                    <view bindtap="bindItemTap">
+                        <text class="answer-txt" aid="{{answer_id}}">{{item.answer_ctnt}}</text>
+                    </view>
+                    
+    
+                </view>
+            </view>
+        </view>
+    </block>
+ </view>

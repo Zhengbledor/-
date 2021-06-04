@@ -20,7 +20,71 @@ Page({
         tempima:[],//暂存的图片ID
         tempImaURL:[],//暂存的图片地址，用来在编辑的时候显示
         imaURL:[],
-        needLess:false
+        needLess:false,
+        time:"",
+        length:0
+    },
+    next:function(e){
+        var dairyList = wx.getStorageSync('dairyList')||[]
+        console.log(this.data.index)
+        var id=this.data.index
+        id++
+        console.log(id)
+        this.setData({
+            index:id,
+            title:dairyList[id].title,
+            test:dairyList[id].test,
+            tempTitle:dairyList[id].title,
+            tempTest:dairyList[id].test,
+            ima:dairyList[id].ima,
+            time:dairyList[id].time,
+            length:dairyList.length,
+            tempima:[],
+            tempImaURL:[],
+            imaURL:[]
+        })
+        var tempima=this.data.tempima
+        for(var i=0;i<this.data.ima.length;i++){
+            tempima.push({
+                fileID:this.data.ima[i].fileID
+            })
+        }
+        this.setData({
+            tempima:tempima
+        })
+        this.getImaURL();
+
+        this.onShow()
+    },
+    back:function(e){
+        var dairyList = wx.getStorageSync('dairyList')||[]
+        console.log(this.data.index)
+        var id=this.data.index
+        id--
+        this.setData({
+            index:id,
+            title:dairyList[id].title,
+            test:dairyList[id].test,
+            tempTitle:dairyList[id].title,
+            tempTest:dairyList[id].test,
+            ima:dairyList[id].ima,
+            time:dairyList[id].time,
+            length:dairyList.length,
+            imaURL:[],
+            tempima:[],
+            tempImaURL:[]
+        })
+        var tempima=this.data.tempima
+        for(var i=0;i<this.data.ima.length;i++){
+            tempima.push({
+                fileID:this.data.ima[i].fileID
+            })
+        }
+        this.setData({
+            tempima:tempima
+        })
+        this.getImaURL();
+        
     },
     ediClick:function(e){
         if(this.data.ifEdi==false){
@@ -115,8 +179,8 @@ Page({
         dairyList[index].lessTest=this.data.lessTest
         dairyList[index].ima=this.data.tempima
         wx.setStorageSync('dairyList',dairyList)
-        wx.navigateBack({
-          delta: 1,
+        wx.navigateTo({
+          url: '/pages/show/show?index'+this.data.index,
         })
     },
     /**
@@ -131,7 +195,9 @@ Page({
             test:dairyList[id].test,
             tempTitle:dairyList[id].title,
             tempTest:dairyList[id].test,
-            ima:dairyList[id].ima
+            ima:dairyList[id].ima,
+            time:dairyList[id].time,
+            length:dairyList.length
         })
         var tempima=this.data.tempima
         for(var i=0;i<this.data.ima.length;i++){
@@ -273,6 +339,9 @@ Page({
      */
     onUnload: function () {
         //console.log("测试")
+        wx.navigateBack({
+          delta: 10,
+        })
     },
 
     /**

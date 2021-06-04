@@ -1,17 +1,22 @@
 <!--pages/sz/sz.wxml-->
 <wux-actionsheet id="wux-actionsheet" />
-<view>
-    <wux-button  size = "small" bind:click="addClick"><wux-icon type="ios-add" size="16"/> 添加日记 </wux-button>
+<view class="add_btn">
+    <wux-button type="dark"  bind:click="addClick"><wux-icon type="ios-add" size="16"/>  </wux-button>
 </view> 
-
-<view wx:for="{{dairyList}}" wx:for-index="index" wx:for-item="item" >
-    <view bindtap="jumpIn" data-index="{{index}}">
-    <wux-card title="{{item.title}}">
-        <view wx:if="{{item.needLess}}" slot="body">
+<view class="background">
+        <image style="margin:0 auto; vertical-align:middle;"
+        src="{{fengmianURL}}"
+        mode="widthFix"
+        width="750rpx" bindtap="intoDairy"> </image>
+</view>
+  <!-- <view   wx:for="{{dairyList}}" wx:for-index="index" wx:for-item="item" >
+    <view  bindtap="jumpIn" data-index="{{index}}">
+    <wux-card   title="{{item.title}}">
+        <view  wx:if="{{item.needLess}}" slot="body">
             {{item.lessTest}}
             ...
         </view>
-        <view wx:else slot="body">
+        <view  wx:else slot="body">
             {{item.test}}
         </view>
         <view slot="footer">  
@@ -19,4 +24,4 @@
         </view>
     </wux-card>
     </view>
-</view>
+</view>   -->

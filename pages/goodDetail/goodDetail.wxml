@@ -1,0 +1,35 @@
+ <van-sticky>
+    <view id="tabs" class="tabs-container">
+      <van-tabs sticky bind:click="onTabsChange" custom-class="" active="{{ active }}">
+        <van-tab wx:for="{{tabs}}" title="{{item.tabs_name}}" name="{{item.tabs_name}}"/>
+      </van-tabs>
+    </view>
+  </van-sticky>
+
+    <view class="swiper-container" id="swiper-container">
+        <van-image 
+        src="{{jjqdURL}}"
+        width="720rpx"
+        fit="widthFix"
+        style="margin: auto"
+        />
+    </view>
+
+    <view class="goods-info">
+      <view class="goods-info-top-container">
+        <view class="goods-profile">
+          <view class="p"><text>¥</text> 0</view>
+        </view>
+        <view class="goods-info-fx">
+          <view class='item left'>
+            <van-icon name="share-o" size="24px" />
+            <view class="icon-title">分享</view>
+          </view>
+          <view class='item'>
+            <van-icon name="qr" size="24px"/>
+            <view class="icon-title">二维码</view>            
+          </view>
+        </view>
+      </view>
+      <view class="goods-title">敬请期待</view>
+      </view> 

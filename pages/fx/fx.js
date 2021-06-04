@@ -1,4 +1,5 @@
 // pages/fx/fx.js
+var util = require('../../utils/util.js')
 Page({
 
     /**
@@ -7,16 +8,18 @@ Page({
     data: {
         index:0,
         manhua:[{
-            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/WechatIMG2.jpeg"
+            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/331622821776_.pic.jpg"
         },{
-            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/WechatIMG3.jpeg"
+            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/321622821743_.pic_hd.jpg"
         },{
-            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/WechatIMG4.jpeg"
+            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/311622821710_.pic_hd.jpg"
         },{
-            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/WechatIMG5.jpeg"
+            fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/漫画/301622821698_.pic_hd.jpg"
         },
             ],
-        manhuaURL:[]
+        manhuaURL:[],
+        feed:[],
+        feed_length:0
     },
 
     /**
@@ -25,6 +28,14 @@ Page({
     onLoad: function (options) {
         //先获得manhua的URL
         this.getManhuaURL();
+        var feed=util.getData()
+        console.log(feed)
+        var feed_data=feed.data
+        this.setData({
+            feed:feed_data,
+            feed_length:feed_data.length
+        })
+
     },
     getManhuaURL:function(){
         wx.cloud.getTempFileURL({

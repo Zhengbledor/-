@@ -83,6 +83,7 @@ Page({
                 lessTest:tempTest
             })
         }
+        var dairyList = wx.getStorageSync('dairyList')||[]
         dairyList.push({
             title:this.data.title,
             test:this.data.test,

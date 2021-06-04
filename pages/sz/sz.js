@@ -8,7 +8,11 @@ Page({
      */
     data: {
       dairyList:[],
-      _options:{}
+      _options:{},
+      fengmianID:[{
+        fileID:"cloud://cloud1-7g971elu4fe9349d.636c-cloud1-7g971elu4fe9349d-1305747814/封面/边框-封面图.png"
+      }],
+      fengmianURL:""
     },
     addClick:function(){
         wx.navigateTo({
@@ -24,9 +28,22 @@ Page({
 
       var dairyList = wx.getStorageSync('dairyList')||[]
       this.setData({
-        dairyList:dairyList,
-        _options:options
+        dairyList:dairyList
       })
+      wx.cloud.getTempFileURL({//fenleiURL
+        fileList: this.data.fengmianID,
+        success: res => {
+          
+            var tempURL=this.data.fengmianURL
+            for(var i=0;i<this.data.fengmianID.length;i++){
+                tempURL=res.fileList[i].tempFileURL
+            }console.log(123)
+            this.setData({ 
+                fengmianURL:tempURL
+            });
+          },
+          fail: console.error
+    })
     },
 
     /**
@@ -37,6 +54,7 @@ Page({
       this.setData({
           dairyList:dairyList
       })
+      this.getManhuaURL()
     },
 
     /**
@@ -46,6 +64,13 @@ Page({
       var  dl=wx.getStorageSync('dairyList')||[]
       this.setData({
           dairyList:dl
+      })
+    },
+    intoDairy:function(){
+      var id=this.data.dairyList.length
+      id=id-1
+      wx.navigateTo({
+        url: '../../pages/show/show?index='+0
       })
     },
     jumpIn:function(e){
@@ -83,6 +108,20 @@ Page({
     },
     })
   },
+  getManhuaURL:function(){
+    wx.cloud.getTempFileURL({
+        fileList: this.data.fengmianID,
+        success: res => {
+            var tempImaURL=this.data.fengmianURL
+            for(var i=0;i<this.data.fengmianID.length;i++){
+                tempImaURL.push(res.fileList[i].tempFileURL)
+            }
+            this.setData({ 
+            fengmianURL:tempImaURL});
+          },
+          fail: console.error
+    })
+},
     /**
      * 生命周期函数--监听页面隐藏
      */

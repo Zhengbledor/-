@@ -140,6 +140,11 @@ Page({
               fail: console.error
         })
     },
+    detail:function(){
+      wx.navigateTo({
+        url: '/pages/goodDetail/goodDetail',
+      })  
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
