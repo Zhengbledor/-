@@ -24,38 +24,6 @@ Page({
         time:"",
         length:0
     },
-    next:function(e){
-        var dairyList = wx.getStorageSync('dairyList')||[]
-        console.log(this.data.index)
-        var id=this.data.index
-        id++
-        console.log(id)
-        this.setData({
-            index:id,
-            title:dairyList[id].title,
-            test:dairyList[id].test,
-            tempTitle:dairyList[id].title,
-            tempTest:dairyList[id].test,
-            ima:dairyList[id].ima,
-            time:dairyList[id].time,
-            length:dairyList.length,
-            tempima:[],
-            tempImaURL:[],
-            imaURL:[]
-        })
-        var tempima=this.data.tempima
-        for(var i=0;i<this.data.ima.length;i++){
-            tempima.push({
-                fileID:this.data.ima[i].fileID
-            })
-        }
-        this.setData({
-            tempima:tempima
-        })
-        this.getImaURL();
-
-        this.onShow()
-    },
     back:function(e){
         var dairyList = wx.getStorageSync('dairyList')||[]
         console.log(this.data.index)
@@ -85,6 +53,36 @@ Page({
         })
         this.getImaURL();
         
+    },
+    Next:function(e){
+        var dairyList = wx.getStorageSync('dairyList')||[]
+        console.log(this.data.index)
+        var id=(Number)(this.data.index)
+        console.log(id)
+        id=id+1
+        this.setData({
+            index:id,
+            title:dairyList[id].title,
+            test:dairyList[id].test,
+            tempTitle:dairyList[id].title,
+            tempTest:dairyList[id].test,
+            ima:dairyList[id].ima,
+            time:dairyList[id].time,
+            length:dairyList.length,
+            imaURL:[],
+            tempima:[],
+            tempImaURL:[]
+        })
+        var tempima=this.data.tempima
+        for(var i=0;i<this.data.ima.length;i++){
+            tempima.push({
+                fileID:this.data.ima[i].fileID
+            })
+        }
+        this.setData({
+            tempima:tempima
+        })
+        this.getImaURL();
     },
     ediClick:function(e){
         if(this.data.ifEdi==false){

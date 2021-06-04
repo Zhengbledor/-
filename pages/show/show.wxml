@@ -21,12 +21,11 @@
         {{time}}</text> 
         </view>
     </view>
-    <view wx:if="{{index<length-1}}" class="add_btn">
-    <wux-button type="stable"  bind:click="next"><wux-icon type="ios-arrow-forward" size="16"/>  </wux-button>
-    
-</view> 
     <view wx:if="{{index!=0}}" class="add_btn_l">
     <wux-button type="stable"  bind:click="back"><wux-icon type="ios-arrow-back" size="16"/>  </wux-button>
+    </view> 
+    <view wx:if="{{index<length-1}}" class="add_btn">
+    <wux-button type="stable"  bind:click="Next"><wux-icon type="ios-arrow-forward" size="16"/>  </wux-button>
     </view> 
 </view>
 
